@@ -4,8 +4,8 @@
   "description": "Good, old tick-tack-toe",
   "main": "app.js",
   "scripts": {
-    "dev-build": "webpack --mode development",
-    "build": "webpack --mode production"
+    "dev": "webpack --env development",
+    "build": "webpack --env production"
   },
   "repository": {
     "type": "git",
