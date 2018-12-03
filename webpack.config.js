@@ -21,19 +21,24 @@ const commonConfig = merge([
             }),
         ],
     },
+]);
+
+const productionConfig = merge([
+    parts.extractCSS({
+        use: 'css-loader',
+    }),
+]);
+
+const developmentConfig = merge([
     parts.loadCSS(),
 ]);
 
-const productionConfig = merge([]);
-
-const developmentConfig = merge([
-    
-]);
-
-module.exports =  mode => {
+module.exports = mode => {
    if(mode === 'production') {
+       console.log('mode: ' + mode);
        return merge(commonConfig, productionConfig, { mode });
    }
-
+   
+   console.log('mode: ' + mode);
    return merge(commonConfig, developmentConfig, { mode });
 };
