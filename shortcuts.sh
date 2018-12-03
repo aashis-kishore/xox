@@ -19,3 +19,7 @@ alias gbl="git branch -v"
 alias grl="git remote -v"
 
 alias gra="git remote add "
+
+alias gc="git checkout "
+
+alias gcm="git checkout master"
