@@ -2,7 +2,7 @@ const path = require('path');
 
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const parts = require('./webpack.parts');
 
@@ -16,6 +16,7 @@ const commonConfig = merge([
     },
     {
         plugins: [
+            new CleanWebpackPlugin('dist', {}),
             new HtmlWebpackPlugin({
                 template: './src/index.html'
             }),
