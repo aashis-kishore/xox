@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Good, old tick-tack-toe",
   "main": "app.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aashis-kishore/xox.git"
@@ -22,6 +21,7 @@
   },
   "homepage": "https://github.com/aashis-kishore/xox#readme",
   "devDependencies": {
-    "webpack": "^4.26.1"
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
   }
 }
