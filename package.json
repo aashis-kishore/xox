@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Good, old tick-tack-toe",
   "main": "app.js",
-  "scripts": {},
+  "scripts": {
+    "dev-build": "node_modules/.bin/webpack --mode development",
+    "build": "node_modules/.bin/webpack --mode production"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aashis-kishore/xox.git"
