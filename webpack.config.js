@@ -25,7 +25,7 @@ const commonConfig = merge([
 
 const productionConfig = merge([
     parts.extractCSS({
-        use: 'css-loader',
+        use: ['css-loader', parts.autoprefix()],
     }),
 ]);
 
@@ -38,7 +38,7 @@ module.exports = mode => {
        console.log('mode: ' + mode);
        return merge(commonConfig, productionConfig, { mode });
    }
-   
+
    console.log('mode: ' + mode);
    return merge(commonConfig, developmentConfig, { mode });
 };
