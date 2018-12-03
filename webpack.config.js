@@ -1,17 +1,38 @@
+const path = require('path');
+
+const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const webpack = require('webpack');
 
-const path = require('path');
+const parts = require('./webpack.parts');
 
 
-module.exports = {
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+const commonConfig = merge([
+    {
+        output: {
+            path: path.resolve(__dirname, 'dist'),
+            filename: 'bundle.js'
+        }
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './src/index.html'
-        })
-    ]
+    {
+        plugins: [
+            new HtmlWebpackPlugin({
+                template: './src/index.html'
+            }),
+        ],
+    },
+]);
+
+const productionConfig = merge([]);
+
+const developmentConfig = merge([
+    
+]);
+
+module.exports =  mode => {
+   if(mode === 'production') {
+       return merge(commonConfig, productionConfig, { mode });
+   }
+
+   return merge(commonConfig, developmentConfig, { mode });
 };
