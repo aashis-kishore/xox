@@ -1,7 +1,7 @@
 {
-  "name": "learn_react",
+  "name": "xox",
   "version": "1.0.0",
-  "description": "Boilerplate for react apps",
+  "description": "boilerplate for react apps",
   "main": "index.js",
   "scripts": {
     "dev:wds": "webpack-dev-server --env development --hot",
