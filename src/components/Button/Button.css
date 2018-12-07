@@ -1,0 +1,30 @@
+.btn {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.2rem;
+    transition: ease 0.3s;
+    background: white;
+}
+
+.btn-on {
+    border: 1px solid green;
+    color: green;
+}
+
+.btn-on:hover {
+    color: white;
+    background: green;
+}
+
+.btn-off {
+    border: 1px solid red;
+    color: red;
+}
+
+.btn-off:hover {
+    color: white;
+    background: red;
+}
