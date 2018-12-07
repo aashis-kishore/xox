@@ -3,6 +3,7 @@
 }
 
 .btn {
+    user-select: none;
     display: inline-block;
     width: 110px;
     height: 50px;
