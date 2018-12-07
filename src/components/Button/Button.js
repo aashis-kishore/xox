@@ -33,9 +33,11 @@ class Button extends Component {
 
     render() {
         return (
-            <button className="btn btn-off" onClick={this.handleClick}>
-                {this.state.isToggleOn ? 'ON' :'OFF'}
-            </button>
+            <div id="on-off-btn">
+                <button className="btn btn-off" onClick={this.handleClick}>
+                    {this.state.isToggleOn ? 'ON' :'OFF'}
+                </button>
+            </div>
         );
     }
 }

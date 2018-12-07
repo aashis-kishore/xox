@@ -11,9 +11,24 @@ body {
 }
 
 #container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     background: url('bg.png');
     height: 100vh;
     background-repeat: no-repeat;
     background-position: center right;
     background-size: cover;
+}
+
+#title {
+    user-select: none;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 2.4rem;
+    background: rgba(35, 37, 39, 0.8);
 }

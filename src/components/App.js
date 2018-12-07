@@ -7,10 +7,10 @@ import Button from './Button/Button';
 
 class App extends Component {
     render() {
-        const name = 'React front-end';
+        const name = 'Boilerplate';
         return (
             <div id="container">
-                <h1>Boilerplate: {name}</h1>
+                <h1 id="title">React Application {name}</h1>
                 <Clock />
                 <Button />
             </div>

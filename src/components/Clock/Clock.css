@@ -1,8 +1,21 @@
-#time {
+#clock {
     user-select: none;
+    display: flex;
+    height: 50%;
+    margin: 100px 20vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     color: white;
-    background: #232527;
+} 
+
+#time {
+    display: block;
+    margin: 20px 0;
+    color: white;
+    background: rgba(35, 37, 39, 0.8);
     padding: 5px;
     font-style: oblique;
+    font-size: 5rem;
     border-radius: 3px;
 }
