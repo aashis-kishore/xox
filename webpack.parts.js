@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
 const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin');
@@ -82,4 +83,8 @@ exports.minifyCSS = ({ options }) => ({
             canPrint: false,
         }),
     ],
+});
+
+exports.clean = path => ({
+    plugins: [new CleanWebpackPlugin([path])],
 });

@@ -6,6 +6,11 @@ const merge = require('webpack-merge');
 const parts = require('./webpack.parts');
 
 
+const PATHS = {
+    app: path.join(__dirname, 'src'),
+    build: path.join(__dirname, 'dist'),
+};
+
 const commonConfig = merge([
     {
         entry: './src/index.js'
@@ -29,6 +34,7 @@ const commonConfig = merge([
 ]);
 
 const productionConfig = merge([
+    parts.clean(PATHS.build),
     parts.extractCSS({
         use: ['css-loader?importLoaders=1', parts.autoprefix()],
     }),
