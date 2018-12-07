@@ -9,7 +9,7 @@ class App extends Component {
     render() {
         const name = 'React front-end';
         return (
-            <div>
+            <div id="container">
                 <h1>Boilerplate: {name}</h1>
                 <Clock />
                 <Button />

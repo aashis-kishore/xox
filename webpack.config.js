@@ -49,10 +49,19 @@ const productionConfig = merge([
             safe: true,
         },
     }),
+    parts.loadImages({
+        options: {
+            limit: 35000,
+            name: '[name].[ext]',
+            outputPath: '/static/images/',
+            publicPath: '../images',
+        },
+    }),
 ]);
 
 const developmentConfig = merge([
     parts.loadCSS(),
+    parts.loadImages(),
 ]);
 
 

@@ -85,6 +85,22 @@ exports.minifyCSS = ({ options }) => ({
     ],
 });
 
+exports.loadImages = ({ include, exclude, options } = {}) => ({
+    module: {
+        rules: [
+            {
+                test: /\.(png|jpg|jpeg|gif)$/,
+                include,
+                exclude,
+                use: {
+                    loader: 'url-loader',
+                    options,
+                },
+            },
+        ],
+    },
+});
+
 exports.clean = path => ({
     plugins: [new CleanWebpackPlugin([path])],
 });
