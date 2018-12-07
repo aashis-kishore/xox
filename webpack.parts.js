@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
+const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin');
 
 
 exports.loadJavaScript = ({ include, exclude } = {}) => ({
@@ -15,6 +16,12 @@ exports.loadJavaScript = ({ include, exclude } = {}) => ({
                 }
             },
         ],
+    },
+});
+
+exports.minifyJavaScript = () => ({
+    optimization: {
+        minimizer: [new UglifyWebpackPlugin({ sourceMap: true })],
     },
 });
 
