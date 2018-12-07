@@ -19,6 +19,10 @@ exports.loadJavaScript = ({ include, exclude } = {}) => ({
     },
 });
 
+exports.generateSourceMap = ({ type }) => ({
+    devtool: type,
+});
+
 exports.minifyJavaScript = () => ({
     optimization: {
         minimizer: [new UglifyWebpackPlugin({ sourceMap: true })],

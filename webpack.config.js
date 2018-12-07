@@ -32,6 +32,7 @@ const productionConfig = merge([
     parts.extractCSS({
         use: ['css-loader?importLoaders=1', parts.autoprefix()],
     }),
+    parts.generateSourceMap({ type: 'source-map' }),
     parts.minifyJavaScript(),
     parts.minifyCSS({
         options: {
