@@ -1,4 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const cssnano = require('cssnano');
 
 
 exports.loadJavaScript = ({ include, exclude } = {}) => ({
@@ -59,4 +61,14 @@ exports.autoprefix = () => ({
     options: {
         plugins: () => [require('autoprefixer')()],
     },
+});
+
+exports.minifyCSS = ({ options }) => ({
+    plugins: [
+        new OptimizeCSSAssetsPlugin({
+            cssProcessor: cssnano,
+            cssProcessorOptions: options,
+            canPrint: false,
+        }),
+    ],
 });

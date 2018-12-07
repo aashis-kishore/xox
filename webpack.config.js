@@ -32,6 +32,15 @@ const productionConfig = merge([
     parts.extractCSS({
         use: ['css-loader?importLoaders=1', parts.autoprefix()],
     }),
+    parts.minifyCSS({
+        options: {
+            discardComments: {
+                removeAll: true,
+            },
+            // Run cssnano in safe mode to avoid potentially unsafe transformations
+            safe: true,
+        },
+    }),
 ]);
 
 const developmentConfig = merge([
