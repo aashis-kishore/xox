@@ -5,29 +5,25 @@ import './Button.css';
 class Button extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            isToggleOn: false
-        };
         
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(event) {
-        // e.preventDefault();
-        this.setState(prevState => ({
-            isToggleOn: !prevState.isToggleOn
-        }));
+        this.props.onBtnClick(event.target);
+    }
 
-        const target = event.target;
-
-        if(this.state.isToggleOn) {
-            target.classList.remove('btn-on');
-            target.classList.add('btn-off');
-            console.log('Off');
-        } else {
-            target.classList.remove('btn-off');
-            target.classList.add('btn-on');
-            console.log('On');
+    handleBtnToggle(target, isToggleOn) {
+        if(target) {
+            if(isToggleOn) {
+                target.classList.add('btn-on');
+                target.classList.remove('btn-off');
+                console.log('ON');
+            } else {
+                target.classList.add('btn-off');
+                target.classList.remove('btn-on');
+                console.log('OFF');
+            }
         }
     }
 
@@ -35,7 +31,8 @@ class Button extends Component {
         return (
             <div id="on-off-btn">
                 <button className="btn btn-off" onClick={this.handleClick}>
-                    {this.state.isToggleOn ? 'ON' :'OFF'}
+                    { this.props.isToggleOn ? 'ON' : 'OFF' }
+                    { this.handleBtnToggle(this.props.target, this.props.isToggleOn) }
                 </button>
             </div>
         );
